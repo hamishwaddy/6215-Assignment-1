@@ -10,59 +10,101 @@ namespace UserRegFormConsoleApp
     {
         public static void Main(string[] args)
         {
-            StandardMessages.WelcomeMessage();
-
             List<Person> people = new List<Person>();
 
-            Person user = new Person();
-            do
-            {
-                Console.Write("Please enter your first name: ");
-                user.FirstName = Console.ReadLine();
-                Console.WriteLine(HelperMethods.ValidMessage(user.FirstName));
-            } while (user.FirstName.Length == 0);
+            bool addAnotherUser = true;
 
             do
             {
-                Console.Write("Please enter your last name: ");
-                user.LastName = Console.ReadLine();
-                Console.WriteLine(HelperMethods.ValidMessage(user.LastName));
-            } while (user.LastName.Length == 0);
-
-            do
-            {
-                Console.Write("Please enter your email address: ");
-                user.Email = Console.ReadLine(); //HOW DO I VALIDATE AN EMAIL ADDRESS???
-                Console.WriteLine(HelperMethods.ValidMessage(user.Email));
-            } while (user.Email.Length == 0);
-
-            //AUTOMATICALLY GENERATE USERNAME
-            user.Username =  user.GenerateUserName();
-            Console.WriteLine(user.Username);
-
-
-            //ALLOW USER TO SET PASSWORD
-            Console.WriteLine("\n... Set your password ...");
-
-            string password1, password2;
-
-            do
-            {
-                Console.Write("Enter your password: ");
-                password1 = Console.ReadLine();
-                Console.Write("Confirm your password: ");
-                password2 = Console.ReadLine();
-                if (password1 != password2)
+                StandardMessages.WelcomeMessage();
+                Person user = new Person();
+                do
                 {
-                    Console.WriteLine("\nYour passwords didn't match. Please try again.");
+                    Console.Write("Please enter your first name: ");
+                    user.FirstName = Console.ReadLine();
+                    Console.WriteLine(HelperMethods.ValidateUserName(user.FirstName));
+                } while (user.FirstName.Length==0);
+                do
+                {
+                    Console.Write("Please enter your last name: ");
+                    user.LastName = Console.ReadLine();
+                    Console.WriteLine(HelperMethods.ValidateUserName(user.LastName));
+                } while (user.LastName.Length == 0);
+                do
+                {
+                    Console.Write("Please enter your email: ");
+                    user.Email = Console.ReadLine();
+                    Console.WriteLine(HelperMethods.ValidateUserName(user.Email));
+                } while (user.Email.Length == 0);
+
+
+                //Console.Write("Please enter your last name: ");
+                //user.LastName = Console.ReadLine();
+                //Console.WriteLine(HelperMethods.ValidateUserName(user.LastName));
+                //Console.Write("Please enter your email address: ");
+                //user.Email = Console.ReadLine();
+                //Console.WriteLine(HelperMethods.ValidateUserName(user.Email));
+                //if (user.FirstName == String.Empty)
+                //{
+                //    Console.WriteLine(HelperMethods.ValidateUserName(user.FirstName));
+                //}
+                //else if (user.LastName==String.Empty)
+                //{
+                //    Console.WriteLine(HelperMethods.ValidateUserName(user.LastName));
+                //}
+                //else if (user.Email==String.Empty)
+                //{
+                //    Console.WriteLine(HelperMethods.ValidateUserName(user.Email));
+                //}
+
+                //AUTOMATICALLY GENERATE USERNAME
+                user.Username =  user.GenerateUserName();
+                Console.WriteLine(user.Username);
+
+
+                //ALLOW USER TO SET PASSWORD
+                Console.WriteLine("\n... Set your password ...");
+
+                string password1, password2;
+
+                do
+                {
+                    Console.Write("Enter your password: ");
+                    password1 = Console.ReadLine();
+                    Console.Write("Confirm your password: ");
+                    password2 = Console.ReadLine();
+                    if (password1 != password2)
+                    {
+                        Console.WriteLine("\nYour passwords didn't match. Please try again.");
+                    }
+                } while (password1 != password2);
+
+                Console.WriteLine("... SUCCESS! Password saved ...\n");
+                people.Add(user);
+
+                //DISPLAY MOST RECENTLY REGISTERED USERS DATA
+                Console.Clear();
+                StandardMessages.WelcomeMessage();
+                Console.WriteLine("\nUSER DATA");
+                Console.WriteLine(user.DisplayRegistrationData());
+
+                //LIST ALL USERS
+                Console.WriteLine("\nLIST OF ALL USERS");
+                Console.WriteLine(user.ListAllUsers(people));
+
+                Console.WriteLine("Would you like to add another user? (y/n)");
+                string answer = Console.ReadLine();
+
+                if(answer == "y")
+                {
+                    addAnotherUser = true;
+                } else
+                {
+                    addAnotherUser = false;
                 }
-            } while (password1 != password2);
 
-            Console.WriteLine("... SUCCESS! Password saved ...\n");
-            people.Add(user);
-
-            foreach (Person x in people)
-                x.ListAllUsers();
+                Console.Clear();
+            } while (addAnotherUser);
 
             StandardMessages.ExitApp();
         }
