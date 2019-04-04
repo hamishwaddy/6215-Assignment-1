@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E0664E59-BF9F-4013-A4C9-00A017342C0A}</ProjectGuid>
+    <ProjectGuid>{4FB4B537-DE4B-4261-ADAA-4074DF9EDA25}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>PhoneBookConsoleApp</RootNamespace>
-    <AssemblyName>PhoneBookConsoleApp</AssemblyName>
+    <RootNamespace>ConsoleUI</RootNamespace>
+    <AssemblyName>ConsoleUI</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,7 +34,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,23 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accounts\Accounts.cs" />
-    <Compile Include="Accounts\ManagerAccounts.cs" />
-    <Compile Include="Applicants\AddressModel.cs" />
-    <Compile Include="Applicants\IApplicantModel.cs" />
-    <Compile Include="Applicants\CompanyModel.cs" />
-    <Compile Include="Accounts\EmployeeModel.cs" />
-    <Compile Include="Applicants\GeoModel.cs" />
-    <Compile Include="Accounts\IAccounts.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Applicants\PersonModel.cs" />
-    <Compile Include="Helpers\StandardMessages.cs" />
-    <Compile Include="Applicants\ManagerModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\OCPLibrary\OCPLibrary.csproj">
+      <Project>{9CC28A4F-123B-424F-95DD-273994AB6D35}</Project>
+      <Name>OCPLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

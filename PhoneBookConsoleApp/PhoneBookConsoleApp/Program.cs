@@ -12,7 +12,7 @@ namespace PhoneBookConsoleApp
         {
             StandardMessages.AppStart();
 
-            Person.GetNames();
+            PersonModel.GetNames();
 
             StandardMessages.ExitApp();
         }
