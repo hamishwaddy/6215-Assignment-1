@@ -70,7 +70,6 @@
             this.firstName.TabIndex = 1;
             this.firstName.Text = "First name:";
             this.firstName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.firstName.Click += new System.EventHandler(this.label1_Click);
             // 
             // lastName
             // 
@@ -91,7 +90,6 @@
             this.firstNameText.Name = "firstNameText";
             this.firstNameText.Size = new System.Drawing.Size(380, 33);
             this.firstNameText.TabIndex = 3;
-            this.firstNameText.TextChanged += new System.EventHandler(this.firstNameText_TextChanged);
             // 
             // lastNameText
             // 
@@ -128,7 +126,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(310, 33);
             this.textBox2.TabIndex = 8;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // userName
             // 
@@ -141,7 +138,6 @@
             this.userName.TabIndex = 7;
             this.userName.Text = "Username:";
             this.userName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.userName.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // button1
             // 
@@ -160,7 +156,6 @@
             this.pwordText.Name = "pwordText";
             this.pwordText.Size = new System.Drawing.Size(380, 33);
             this.pwordText.TabIndex = 11;
-            this.pwordText.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // enterPword
             // 
@@ -173,7 +168,6 @@
             this.enterPword.TabIndex = 10;
             this.enterPword.Text = "Enter password:";
             this.enterPword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.enterPword.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // textBox3
             // 
@@ -242,7 +236,6 @@
             this.MaximumSize = new System.Drawing.Size(892, 733);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -36,26 +36,7 @@ namespace UserRegFormConsoleApp
                     user.Email = Console.ReadLine();
                     Console.WriteLine(HelperMethods.ValidateUserName(user.Email));
                 } while (user.Email.Length == 0);
-
-
-                //Console.Write("Please enter your last name: ");
-                //user.LastName = Console.ReadLine();
-                //Console.WriteLine(HelperMethods.ValidateUserName(user.LastName));
-                //Console.Write("Please enter your email address: ");
-                //user.Email = Console.ReadLine();
-                //Console.WriteLine(HelperMethods.ValidateUserName(user.Email));
-                //if (user.FirstName == String.Empty)
-                //{
-                //    Console.WriteLine(HelperMethods.ValidateUserName(user.FirstName));
-                //}
-                //else if (user.LastName==String.Empty)
-                //{
-                //    Console.WriteLine(HelperMethods.ValidateUserName(user.LastName));
-                //}
-                //else if (user.Email==String.Empty)
-                //{
-                //    Console.WriteLine(HelperMethods.ValidateUserName(user.Email));
-                //}
+                
 
                 //AUTOMATICALLY GENERATE USERNAME
                 user.Username =  user.GenerateUserName();

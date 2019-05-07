@@ -55,7 +55,7 @@ namespace RandomNumberGame2
             {
                 PlayMediumLevel(userGuess);
             }
-            else
+            else if ()
                 PlayHardLevel(userGuess);
         }
 

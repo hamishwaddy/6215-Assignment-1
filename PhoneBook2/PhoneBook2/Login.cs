@@ -45,7 +45,7 @@ namespace PhoneBook2
             return  new List<Login>
             {
                 new Login() { userName = "sam", password = "123", isSupervisor = true },
-                new Login() { userName = "renato", password = "123", isSupervisor = false },
+                new Login() { userName = "orrie", password = "123", isSupervisor = false },
                 //new Login() { userName = "sam", password = "123", isSupervisor = true }
             };
 

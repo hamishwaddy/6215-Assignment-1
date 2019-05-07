@@ -19,17 +19,11 @@ namespace UserRegFormConsoleApp
 
 
         //PERSON METHODS
-        
-       
         public string GenerateUserName()  //AUTOMATICALLY CREATE A USERNAME
         {
             return $"Your username is: { FirstName.Substring(0, 1).ToLower() }.{ LastName.ToLower() }";
         }
-
-        //public string DisplayUserType()
-        //{
-        //    return $"{ FirstName }'s role is: { Person.}";
-        //}
+        
 
         public string DisplayRegistrationData()
         {
@@ -38,7 +32,6 @@ namespace UserRegFormConsoleApp
             return output;
         }
         
-
 
         public string ListAllUsers(List<Person> people)
         {
