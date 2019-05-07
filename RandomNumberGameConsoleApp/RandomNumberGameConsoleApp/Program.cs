@@ -12,7 +12,7 @@ namespace RandomNumberGameConsoleApp
         {
             StandardMessages.WelcomeMessage();
 
-            User player1 = new User();
+            User player1 = new User()
             
             
 

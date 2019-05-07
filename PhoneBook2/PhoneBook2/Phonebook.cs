@@ -20,11 +20,6 @@ namespace PhoneBook2
         public string website { get; set; }
         public Company company { get; set; }
 
-
-
-
-
-
         public List<Phonebook> GetPhoneBook() 
         {
             string json = new WebClient().DownloadString("https://jsonplaceholder.typicode.com/users?_limit=5");
