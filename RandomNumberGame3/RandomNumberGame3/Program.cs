@@ -10,7 +10,10 @@ namespace RandomNumberGame3
     {
         static void Main(string[] args)
         {
-            SelectDifficultyLevel
+            // Select Level
+            // Make guesses
+            // If correct, score points
+            // Display results to player (points scored, level ponts scored on, enter username)
 
 
             Console.ReadLine();
