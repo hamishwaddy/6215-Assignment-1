@@ -44,12 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseGameModel.cs" />
-    <Compile Include="DifficultyLevel.cs" />
-    <Compile Include="IEasyLevel.cs" />
-    <Compile Include="IHardLevel.cs" />
-    <Compile Include="IMediumLevel.cs" />
+    <Compile Include="EasyLevel.cs" />
+    <Compile Include="HardLevel.cs" />
+    <Compile Include="IGameModel.cs" />
+    <Compile Include="MediumLevel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StandardMessages.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
