@@ -10,32 +10,61 @@ namespace RandomNumberGame3
     {
         Random rnd = new Random();
         // PROPERTIES
-        public int MaxGuesses { get; set; }
-        public int MaxNumber { get; set; }
-        public string DifficultyLevel { get; set; }
+        public int MaxGuesses { get; set; } = 3;
+        public int MaxNumber { get; set; } = 5;
+        public string DifficultyLevel { get; set; } = "EASY";
         public int SecretNumber { get; set; }
-        public int CurrentGuessCount { get; set; }
+        public int CurrentGuessCount { get; set; } = 0;
+        public int Score { get; set; } = 0;
+        public string UN { get; set; }
+        public int CurrentGuess { get; set; }// Will be passed to CalculateScore();
+        public bool LevelComplete { get; set; } = false;
+        public List<string> Guesses { get; set; }
+        public bool GameOver { get; set; }
 
-        // ATTRIBUTES
-        private int maxGuesses = 3;
-        private int maxNumber = 5;
-        private string difficultyLevel = "EASY";
 
+        // Constructor
         public EasyLevel()
         {
-            MaxGuesses = maxGuesses;
-            MaxNumber = maxNumber;
-            DifficultyLevel = difficultyLevel;
+            SecretNumber = SetSecretNumber();
         }
-        
 
         // METHODS
-        public int SetSecretNumberEasyLevel(int maxNumber)
+        public int SetSecretNumber()
         {
-            int secretNum = rnd.Next(1, maxNumber);
+            int secretNum = rnd.Next(1, MaxNumber);
             return secretNum;
         }
 
-        
+
+        public void CalculateScore()
+        {
+            Guesses.Add($"{CurrentGuess} @ {DifficultyLevel}");
+            int score = 0;
+            CurrentGuessCount += 1;
+            if (CurrentGuess == SecretNumber && CurrentGuessCount == 1)
+                score += 10;
+            else if (CurrentGuess == SecretNumber && CurrentGuessCount == 2)
+                score += 6;
+            else if (CurrentGuess == SecretNumber && CurrentGuessCount == 3)
+                score += 2;
+            else
+                GameOver = true;
+
+            if (CurrentGuess == SecretNumber)
+                LevelComplete = true;
+
+            Score = score;
+
+            if ( Score >0 && GameOver == true)
+                EnterUsername();
+        }
+        public string EnterUsername()
+        {
+            int trimLength = 5;
+            if (UN.Length > trimLength)
+                UN = UN.Remove(trimLength);
+            return UN;
+        }
     }
 }

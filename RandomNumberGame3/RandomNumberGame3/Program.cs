@@ -23,7 +23,7 @@ namespace RandomNumberGame3
                 string input = Console.ReadLine();
                 if (input == "1")
                 {
-                    IGameModel newGame = new IGameModel // AM TRYING TO CREATE NEW INSTANCE OF 'EASYLEVEL' GAME
+                    IGameModel newGame = new IGameModel; // AM TRYING TO CREATE NEW INSTANCE OF 'EASYLEVEL' GAME
                     
                 }
                 else if (input == "2")
