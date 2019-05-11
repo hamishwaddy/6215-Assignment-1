@@ -17,14 +17,20 @@ namespace RandomNumberGame3
 
             Console.WriteLine(StandardMessages.StartApp());
             bool keepGoing = true;
+            Console.WriteLine("\n\nSelect your game level\n\t1 - Easy\n\t2 - Medium\n\t3 - Hard\n\t4 - Exit");
+            string input = Console.ReadLine();
             do
             {
-                Console.WriteLine("\n\nSelect your game level\n\t1 - Easy\n\t2 - Medium\n\t3 - Hard\n\t4 - Exit");
-                string input = Console.ReadLine();
                 if (input == "1")
                 {
-                    IGameModel newGame = new IGameModel; // AM TRYING TO CREATE NEW INSTANCE OF 'EASYLEVEL' GAME
-                    
+                    IGameModel newGame = new EasyLevel();
+                    Console.Clear();
+                    Console.WriteLine($"Random Number Guessing Game || {newGame.DifficultyLevel} Level");
+                    Console.WriteLine($"Secret Num: {newGame.SecretNumber}");
+                    Console.WriteLine($"Choose a number between 1 and {newGame.MaxNumber}. You get {newGame.MaxGuesses} guesses.");
+                    Console.Write("\n\nEnter first guess: ");
+                    int guess = int.Parse(Console.ReadLine());
+                    newGame.CalculateScore();
                 }
                 else if (input == "2")
                 {

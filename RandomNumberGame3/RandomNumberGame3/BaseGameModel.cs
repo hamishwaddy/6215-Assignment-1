@@ -9,25 +9,29 @@ namespace RandomNumberGame3
 {
     public class BaseGameModel : IGameModel
     {
+        Random rnd = new Random();
+
         public int SecretNumber { get; set; }
         public int MaxNumber { get; set; }
         public string DifficultyLevel { get; set; }
         public int MaxGuesses { get; set; }
         public int CurrentGuessCount { get; set; }
-        
+        public List<string> Guesses { get; set; }
+        public int Score { get; set; }
+        public string UN { get; set; }
+        public bool LevelComplete { get; set; }
+        public bool GameOver { get; set; }
+        public int CurrentGuess { get; set; }
 
-        // DOES THIS CLASS NEED A CONSTRUCTOR???
-
-        // Sequence for 'playing' the game should be here??? And pass the 'playing sequence' method the game level so it knows 'max number' & name of 'difficulty level'
-
-        /*
-        public string ExplainRules(string DifficultyLevel, int SecretNumber, int MaxNumber)
+        public void CalculateScore()
         {
-            return $"You have chosen to play '{difficultyLevel}' level. \nYou are allowed up to {maxGuesses} guesses to try and pick the secret number between 1 and {maxNumber}";
         }
-        */
 
-
+        public int SetSecretNumber()
+        {
+            int secretNum = rnd.Next(1, MaxNumber);
+            return secretNum;
+        }
 
     }
 }

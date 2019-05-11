@@ -15,7 +15,9 @@ namespace RandomNumberGame3
         string UN { get; set; }
         bool LevelComplete { get; set; }
         bool GameOver { get; set; }
+        int CurrentGuess { get; set; }
 
         void CalculateScore();
         int SetSecretNumber();
+    }
 }
