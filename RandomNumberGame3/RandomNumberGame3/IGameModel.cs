@@ -5,7 +5,7 @@ namespace RandomNumberGame3
 {
     public interface IGameModel
     {
-        List<string> Guesses { get; set; }
+        List<int> Guesses { get; set; }
         string DifficultyLevel { get; set; }
         int MaxNumber { get; set; }
         int SecretNumber { get; set; }
@@ -17,7 +17,7 @@ namespace RandomNumberGame3
         bool GameOver { get; set; }
         int CurrentGuess { get; set; }
 
-        void CalculateScore();
+        void CalculateScore(int CurrentGuess);
         int SetSecretNumber();
     }
 }

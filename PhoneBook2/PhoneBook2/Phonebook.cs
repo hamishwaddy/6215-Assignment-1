@@ -10,7 +10,6 @@ namespace PhoneBook2
 {
     public class Phonebook
     {
-       
         public int id { get; set; }
         public string name { get; set; }
         public string username { get; set; }
@@ -19,19 +18,7 @@ namespace PhoneBook2
         public string phone { get; set; }
         public string website { get; set; }
         public Company company { get; set; }
-
-        /*
-        public List<Phonebook> GetPhoneBook() 
-        {
-            string json = new WebClient().DownloadString("https://jsonplaceholder.typicode.com/users?_limit=5");
-
-            List<Phonebook> users = new JavaScriptSerializer().Deserialize<List<Phonebook>>(json);
-
-            return users;
-        }
-        */
     }
-
 
     public class Geo
     {

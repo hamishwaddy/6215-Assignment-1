@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UserRegFormConsoleApp;
 
 namespace UserRegFormWindowsForms
 {
@@ -16,6 +17,10 @@ namespace UserRegFormWindowsForms
         {
             InitializeComponent();
         }
-        
+
+        private void firstNameText_TextChanged(object sender, EventArgs e)
+        {
+            // this.firstNameText=Person.
+        }
     }
 }

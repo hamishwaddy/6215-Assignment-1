@@ -1,0 +1,58 @@
+﻿<Window x:Class="RandomNumberGame3WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RandomNumberGame3WPF"
+        mc:Ignorable="d"
+        Title="Random Number Game" Height="600" Width="800" MinWidth="600" MinHeight="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock x:Name="gameTitle" Grid.ColumnSpan="2" FontFamily="Tahoma" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"> RANDOM NUMBER GAME</TextBlock>
+    
+        <!-- Radio buttons -->
+        <StackPanel Grid.Column="0" Grid.Row="1">
+        <Label Margin="20,0" FontFamily="Tahoma" FontSize="16">Select difficulty level</Label>
+        <RadioButton x:Name="easyLevelBtn" FontFamily="Tahoma" FontSize="16" Margin="30,10,0,0" IsChecked="True" Checked="EasyLevelBtn_Checked">Easy</RadioButton>
+        <RadioButton x:Name="mediumLevelBtn" FontFamily="Tahoma" FontSize="16" Margin="30,0,0,0">Medium</RadioButton>
+        <RadioButton x:Name="hardLevelBtn" FontFamily="Tahoma" FontSize="16" Margin="30,0,0,0">Hard</RadioButton>
+        </StackPanel>
+        
+        <!-- Make your guess area -->
+        <StackPanel Grid.Column="0" Grid.Row="2">
+            <Label Margin="20,10,20,5" Padding="0,2" FontFamily="Tahoma" FontSize="16">Make your guess</Label>
+            <TextBox x:Name="userGuess" Margin="20,0" Width="100" HorizontalAlignment="Left"></TextBox>
+            <Button x:Name="submit" Margin="20,10" Width="60" HorizontalAlignment="Left">Submit</Button>
+        </StackPanel>
+        
+        <!-- Previous guesses -->
+        <StackPanel Grid.Column="0" Grid.Row="3">
+            <Label Margin="20,0" Padding="0,2" FontFamily="Tahoma" FontSize="16px">Previous guesses</Label>
+            <TextBox x:Name="previousGuesses" Margin="20,0" Width="200px" HorizontalAlignment="Left"></TextBox>
+        </StackPanel>
+        
+        <!-- Scorebox -->
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Label x:Name="yourScoreLbl" Margin="20,5" FontFamily="Tahoma" FontSize="16px">Your score:</Label>
+            <TextBox Margin="20,10" FontFamily="Tahoma" FontWeight="Bold" FontSize="50px" Width="100px" Height="80px" HorizontalAlignment="Left" MinWidth="50" MinHeight="40"></TextBox>
+        </StackPanel>
+        
+        <!-- Player name -->
+        <StackPanel Grid.Column="1" Grid.Row="2">
+        <Label x:Name="enterNamelbl" Margin="20,10,10,5" Padding="0,2" FontFamily="Tahoma" FontSize="16px">Enter your name (5 characters max)</Label>
+        <TextBox x:Name="enterPlayerName" Margin="20,10,50,0"></TextBox>
+        </StackPanel>
+    </Grid>
+</Window>

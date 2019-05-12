@@ -16,14 +16,14 @@ namespace RandomNumberGame3
         public string DifficultyLevel { get; set; }
         public int MaxGuesses { get; set; }
         public int CurrentGuessCount { get; set; }
-        public List<string> Guesses { get; set; }
+        public List<int> Guesses { get; set; }
         public int Score { get; set; }
         public string UN { get; set; }
         public bool LevelComplete { get; set; }
         public bool GameOver { get; set; }
         public int CurrentGuess { get; set; }
 
-        public void CalculateScore()
+        public void CalculateScore(int CurrentGuess)
         {
         }
 

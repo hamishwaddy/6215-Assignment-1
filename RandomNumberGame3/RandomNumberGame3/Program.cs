@@ -30,7 +30,8 @@ namespace RandomNumberGame3
                     Console.WriteLine($"Choose a number between 1 and {newGame.MaxNumber}. You get {newGame.MaxGuesses} guesses.");
                     Console.Write("\n\nEnter first guess: ");
                     int guess = int.Parse(Console.ReadLine());
-                    newGame.CalculateScore();
+                    guess = newGame.CurrentGuess;
+                    newGame.CalculateScore(guess);
                 }
                 else if (input == "2")
                 {

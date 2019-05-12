@@ -18,13 +18,10 @@ namespace PhoneBook2
             string json = new WebClient().DownloadString("https://jsonplaceholder.typicode.com/users?_limit=5");
             users = new JavaScriptSerializer().Deserialize<List<Phonebook>>(json);
 
-
             StandardMessages messages = new StandardMessages();
             Console.WriteLine(messages.StartApp);
             Console.WriteLine();
             Console.WriteLine();
-
-            
 
             bool keepGoing = true;
             do
@@ -35,17 +32,19 @@ namespace PhoneBook2
                 switch (input)
                 {
                     case "1":
-
+                        Console.Clear();
+                        StandardMessages.StandardUserViewTitle();
                         foreach (Phonebook phonebook in users)
                         {
                             IStandardUser user = new StandardUser(phonebook);
                             Console.WriteLine(user.Display());
                         }
-
+                        //Console.WriteLine("Press any key to return to the main menu.");
                         break;
 
                     case "2":
-
+                        Console.Clear();
+                        StandardMessages.SupervisorViewTitle();
                         foreach (Phonebook phonebook in users)
                         {
                             ISupervisor user = new Supervisor(phonebook);
@@ -58,41 +57,11 @@ namespace PhoneBook2
                         keepGoing = false;
                         break;
                 }
-
-
             } while (keepGoing == true);
 
-
             Console.WriteLine(messages.EndApp);
-
-
-
-
-            /*
-            Login currentUser = new Login();
-
-            Console.Write("Please enter your username: ");
-            currentUser.userName= Console.ReadLine();
-            Console.Write("Please enter your password: ");
-            currentUser.password = Console.ReadLine();
-
-            
-            while(!currentUser.UserAuthentication(currentUser.userName, currentUser.password))
-            {
-                Console.WriteLine("Login details incorrect. Please try again");
-                Console.Write("Please enter your password: ");
-                currentUser.password = Console.ReadLine();
-
-            }
-
-            Phonebook phonebookList = new Phonebook();
-            phonebookList.DisplayPhonebook(currentUser);
-            */
             Console.WriteLine("Press any key to exit");
             Console.ReadLine();
-
         }
-
-
     }
 }

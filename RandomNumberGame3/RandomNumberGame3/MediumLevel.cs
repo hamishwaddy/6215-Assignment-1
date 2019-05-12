@@ -19,7 +19,7 @@ namespace RandomNumberGame3
         public string UN { get; set; }
         public int CurrentGuess { get; set; }// Will be passed to CalculateScore();
         public bool LevelComplete { get; set; } = false;
-        public List<string> Guesses { get; set; }
+        public List<int> Guesses { get; set; }
         public bool GameOver { get; set; }
 
 
@@ -37,9 +37,10 @@ namespace RandomNumberGame3
         }
 
 
-        public void CalculateScore()
+        public void CalculateScore(int CurrentGuess)
         {
-            Guesses.Add($"{CurrentGuess} @ {DifficultyLevel}");
+            Guesses.Add(CurrentGuess);
+            //Guesses.Add($"{CurrentGuess} @ {DifficultyLevel}");
             int score = 0;
             CurrentGuessCount += 1;
             if (CurrentGuess == SecretNumber && CurrentGuessCount == 1)

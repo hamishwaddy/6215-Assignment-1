@@ -23,7 +23,8 @@ namespace UserRegFormConsoleApp
        
         public string GenerateUserName()  //AUTOMATICALLY CREATE A USERNAME
         {
-            return $"Your username is: { FirstName.Substring(0, 1).ToLower() }.{ LastName.ToLower() }";
+            string output = $"Your username is: { FirstName.Substring(0, 1).ToLower() }.{ LastName.ToLower() }";
+            return output;
         }
 
         //public string DisplayUserType()
