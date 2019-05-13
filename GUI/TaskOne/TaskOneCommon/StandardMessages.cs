@@ -10,9 +10,10 @@ namespace TaskOneCommon
     {
         public static void WelcomeMessage()
         {
-            Console.WriteLine("*********** Assignment 1 *********");
-            Console.WriteLine("************* Task 1 *************");
-            Console.WriteLine("***** User Registration Form *****\n\n");
+            Console.WriteLine("*********************************************");
+            Console.WriteLine("****** Task 1: User Registration Form *******");
+            Console.WriteLine("******* Hamish Wadsworth, ID: 9835077 *******");
+            Console.WriteLine("*********************************************\n\n");
         }
 
         public static void ExitApp()
