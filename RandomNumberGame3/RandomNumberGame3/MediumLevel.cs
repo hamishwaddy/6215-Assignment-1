@@ -16,11 +16,11 @@ namespace RandomNumberGame3
         public int SecretNumber { get; set; }
         public int CurrentGuessCount { get; set; } = 0;
         public int Score { get; set; } = 0;
-        public string UN { get; set; }
+        public string UN { get; set; } = "";
         public int CurrentGuess { get; set; }// Will be passed to CalculateScore();
         public bool LevelComplete { get; set; } = false;
-        public List<int> Guesses { get; set; }
-        public bool GameOver { get; set; }
+        public List<int> Guesses { get; set; } = new List<int>();
+        public bool GameOver { get; set; } = false;
 
 
         // Constructor
@@ -37,27 +37,36 @@ namespace RandomNumberGame3
         }
 
 
-        public void CalculateScore(int CurrentGuess)
+        public void CalculateScore()
         {
             Guesses.Add(CurrentGuess);
             //Guesses.Add($"{CurrentGuess} @ {DifficultyLevel}");
             int score = 0;
             CurrentGuessCount += 1;
             if (CurrentGuess == SecretNumber && CurrentGuessCount == 1)
+            {
                 score += 10;
+                LevelComplete = true;
+            }
             else if (CurrentGuess == SecretNumber && CurrentGuessCount == 2)
+            {
                 score += 6;
+                LevelComplete = true;
+            }
             else if (CurrentGuess == SecretNumber && CurrentGuessCount == 3)
+            {
                 score += 2;
+                LevelComplete = true;
+            }
             else
                 GameOver = true;
 
-            if (CurrentGuess == SecretNumber)
-                LevelComplete = true;
+
+
 
             Score = score;
 
-            if (Score > 0 && GameOver == true)
+            if (Score > 0 )
                 EnterUsername();
         }
         public string EnterUsername()

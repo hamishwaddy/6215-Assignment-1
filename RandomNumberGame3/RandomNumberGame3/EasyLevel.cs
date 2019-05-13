@@ -16,11 +16,11 @@ namespace RandomNumberGame3
         public int SecretNumber { get; set; }
         public int CurrentGuessCount { get; set; } = 0;
         public int Score { get; set; } = 0;
-        public string UN { get; set; }
+        public string UN { get; set; }=""; 
         public int CurrentGuess { get; set; }// Will be passed to CalculateScore();
         public bool LevelComplete { get; set; } = false;
-        public List<int> Guesses { get; set; }
-        public bool GameOver { get; set; }
+        public List<int> Guesses { get; set; } = new List<int>();
+        public bool GameOver { get; set; } = false;
 
 
         // Constructor
@@ -37,35 +37,54 @@ namespace RandomNumberGame3
         }
 
 
-        public void CalculateScore(int CurrentGuess)
+        public void CalculateScore()
         {
             Guesses.Add(CurrentGuess);
             //Guesses.Add($"{CurrentGuess} @ {DifficultyLevel}");
-            int score = 0;
+
             CurrentGuessCount += 1;
             if (CurrentGuess == SecretNumber && CurrentGuessCount == 1)
-                score += 10;
+            {
+                Score += 10;
+                LevelComplete = true;
+            }
             else if (CurrentGuess == SecretNumber && CurrentGuessCount == 2)
-                score += 6;
+            {
+                Score += 6;
+                LevelComplete = true;
+            }
             else if (CurrentGuess == SecretNumber && CurrentGuessCount == 3)
-                score += 2;
+            {
+                Score += 2;
+                LevelComplete = true;
+            }
             else
                 GameOver = true;
 
-            if (CurrentGuess == SecretNumber)
-                LevelComplete = true;
 
-            Score = score;
-
-            if ( Score >0 && GameOver == true)
-                EnterUsername();
+            //if ( Score >0 || GameOver == true)
+            EnterUsername();
         }
-        public string EnterUsername()
+
+        public void EnterUsername()
         {
-            int trimLength = 5;
-            if (UN.Length > trimLength)
-                UN = UN.Remove(trimLength);
-            return UN;
+            char[] constrained = new char[5];
+            char[] og = UN.ToCharArray();
+            if(UN.Length > 5)
+            {
+                for (int i = 0; i < 5; i++)
+                    constrained[i] = og[i];
+            }
+            else
+            {
+                for (int i = 0; i < UN.Length; i++)
+                    constrained[i] = og[i];
+            }
+            string result = "";
+            foreach (char x in constrained)
+                result += x;
+            UN = result;
+            //concantinate the string back together and use it to set UN
         }
     }
 }

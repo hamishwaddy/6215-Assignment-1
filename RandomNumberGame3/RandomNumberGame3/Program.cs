@@ -18,38 +18,74 @@ namespace RandomNumberGame3
             Console.WriteLine(StandardMessages.StartApp());
             bool keepGoing = true;
             Console.WriteLine("\n\nSelect your game level\n\t1 - Easy\n\t2 - Medium\n\t3 - Hard\n\t4 - Exit");
-            string input = Console.ReadLine();
-            do
+            int input = int.Parse(Console.ReadLine());
+            if (input == 1)
             {
-                if (input == "1")
+                IGameModel newGame = new EasyLevel();
+                newGame.E
+                do
                 {
-                    IGameModel newGame = new EasyLevel();
+                    Console.Clear();
+                    Console.WriteLine(newGame.LevelComplete);//remove
+                    Console.WriteLine($"Random Number Guessing Game || {newGame.DifficultyLevel} Level");
+                    Console.WriteLine($"Secret Num: {newGame.SecretNumber}");
+                    Console.WriteLine($"Choose a number between 1 and {newGame.MaxNumber}. You get {newGame.MaxGuesses} guesses.");
+                    Console.Write("\n\nEnter first guess: ");
+                    int guess = int.Parse(Console.ReadLine());
+                    newGame.CurrentGuess = guess;
+
+                    newGame.CalculateScore();
+
+                    if (newGame.LevelComplete)
+                        input++;
+
+                } while (newGame.CurrentGuessCount < 3 );
+                if (newGame.GameOver)
+                {
+                    Console.Clear();
+                    Console.WriteLine(newGame.Score);//remove
+                    Console.Write("Game Over, please enter your name: ");
+
+                    newGame.UN = Console.ReadLine();
+
+                    Console.WriteLine(newGame.UN);
+
+                    Console.ReadLine();
+                }
+                newGame.
+            }
+            if (input == 2)
+            {
+                IGameModel newGame = new MediumLevel();
+                do
+                {
                     Console.Clear();
                     Console.WriteLine($"Random Number Guessing Game || {newGame.DifficultyLevel} Level");
                     Console.WriteLine($"Secret Num: {newGame.SecretNumber}");
                     Console.WriteLine($"Choose a number between 1 and {newGame.MaxNumber}. You get {newGame.MaxGuesses} guesses.");
                     Console.Write("\n\nEnter first guess: ");
                     int guess = int.Parse(Console.ReadLine());
-                    guess = newGame.CurrentGuess;
-                    newGame.CalculateScore(guess);
-                }
-                else if (input == "2")
+                    newGame.CurrentGuess = guess;
+                    newGame.CalculateScore();
+                    if (newGame.LevelComplete)
+                        input++;
+                } while (newGame.CurrentGuessCount < 3 || newGame.LevelComplete == true);
+                if (newGame.GameOver)
                 {
-                   
+                    Console.Clear();
+                    Console.WriteLine("Game Over...");
                 }
-                else if (input == "3")
-                {
-                }
-                else if (input == "4")
-                {
-                    keepGoing = false;
-                }
-                else
-                    keepGoing = true;
-                    
-            } while (keepGoing == true);
 
-
+            }
+            if (input == 3)
+            {
+            }
+            if (input == 4)
+            {
+                keepGoing = false;
+            }
+            else
+                keepGoing = true;
 
             Console.ReadLine();
         }

@@ -23,7 +23,7 @@ namespace RandomNumberGame3
         public bool GameOver { get; set; }
         public int CurrentGuess { get; set; }
 
-        public void CalculateScore(int CurrentGuess)
+        public void CalculateScore()
         {
         }
 

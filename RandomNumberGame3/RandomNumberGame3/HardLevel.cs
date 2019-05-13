@@ -37,7 +37,7 @@ namespace RandomNumberGame3
         }
 
 
-        public void CalculateScore(int CurrentGuess)
+        public void CalculateScore()
         {
             Guesses.Add(CurrentGuess);
             //Guesses.Add($"{CurrentGuess} @ {DifficultyLevel}");

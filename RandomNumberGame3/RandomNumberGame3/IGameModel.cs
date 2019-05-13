@@ -17,7 +17,7 @@ namespace RandomNumberGame3
         bool GameOver { get; set; }
         int CurrentGuess { get; set; }
 
-        void CalculateScore(int CurrentGuess);
+        void CalculateScore();
         int SetSecretNumber();
     }
 }
