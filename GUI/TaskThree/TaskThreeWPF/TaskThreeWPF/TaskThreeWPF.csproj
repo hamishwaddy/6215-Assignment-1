@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C7E6B61B-BF90-4CA8-890A-7DD75FCA38AA}</ProjectGuid>
+    <ProjectGuid>{F01082BA-317E-460D-91C8-773DC20CB989}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>TaskThreeWPF</RootNamespace>
     <AssemblyName>TaskThreeWPF</AssemblyName>
@@ -93,6 +93,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\TaskThreeCommon\TaskThreeCommon\TaskThreeCommon.csproj">
+      <Project>{c4211083-d3d3-4bdd-9664-9e980220d252}</Project>
+      <Name>TaskThreeCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

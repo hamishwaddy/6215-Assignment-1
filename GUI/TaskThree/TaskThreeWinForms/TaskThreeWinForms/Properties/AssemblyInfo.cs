@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TaskThreeConsole")]
+[assembly: AssemblyTitle("TaskThreeWinForms")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TaskThreeConsole")]
+[assembly: AssemblyProduct("TaskThreeWinForms")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1fcee75a-7838-44c9-ad16-0a43796f946b")]
+[assembly: Guid("054c6acf-8d7d-4103-867a-5df62dbe32ff")]
 
 // Version information for an assembly consists of the following four values:
 //
