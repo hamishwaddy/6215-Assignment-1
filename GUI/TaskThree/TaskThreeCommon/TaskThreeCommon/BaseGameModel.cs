@@ -23,8 +23,10 @@ namespace TaskThreeCommon
         public bool GameOver { get; set; }
         public int CurrentGuess { get; set; }
 
-        public void CalculateScore()
+        public int CalculateScore(int CurrentGuess)
         {
+            int runningTotal = 0;
+            return runningTotal;
         }
 
         public int SetSecretNumber()

@@ -17,7 +17,7 @@ namespace TaskThreeCommon
         bool GameOver { get; set; }
         int CurrentGuess { get; set; }
 
-        void CalculateScore();
+        int CalculateScore(int CurrentGuess);
         void EnterUsername(string un);
         int SetSecretNumber();
     }

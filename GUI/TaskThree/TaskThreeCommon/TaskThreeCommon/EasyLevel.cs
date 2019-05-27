@@ -37,8 +37,9 @@ namespace TaskThreeCommon
         }
 
 
-        public void CalculateScore()
+        public int CalculateScore(int CurrentGuess)
         {
+            int runningTotal = 0;
             //Guesses.Add(CurrentGuess);
             Guesses.Add($"{CurrentGuess} @ {DifficultyLevel}");
 
@@ -61,6 +62,8 @@ namespace TaskThreeCommon
                 GameOver = true;
 
             CurrentGuessCount++;
+
+            return runningTotal;
         }
 
         public void EnterUsername(string un)

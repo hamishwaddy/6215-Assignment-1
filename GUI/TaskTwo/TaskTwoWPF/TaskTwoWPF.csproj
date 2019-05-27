@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TaskTwoCommon\TaskTwoCommon\TaskTwoCommon.csproj">
+      <Project>{41d1fb4b-7e2c-411d-b1b5-c808769e7a42}</Project>
+      <Name>TaskTwoCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

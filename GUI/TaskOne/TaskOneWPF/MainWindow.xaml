@@ -5,8 +5,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TaskOneWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="User Registration Form" Height="450" Width="800">
     <Grid>
-        
+        <!-- COLUMN SETUP -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <!-- ROW SETUP -->
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!-- START OF TEXT BLOCKS-->
+        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">First name:</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">Last name:</TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">Email:</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">Enter password:</TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">Confirm password:</TextBlock>
+
+        <!-- START OF TEXT BOXES-->
+        <TextBox x:Name="firstName" Grid.Row="1" Grid.Column="1" Margin="5" VerticalAlignment="Center" BorderBrush="#7F000000" Background="#FFF0F0F0"></TextBox>
+        <TextBox x:Name="lastName" Grid.Row="2" Grid.Column="1" Margin="5" VerticalAlignment="Center" BorderBrush="#7F000000" Background="#FFF0F0F0"></TextBox>
+        <TextBox x:Name="email" Grid.Row="3" Grid.Column="1" Margin="5" VerticalAlignment="Center" BorderBrush="#7F000000" Background="#FFF0F0F0"></TextBox>
+        <TextBox x:Name="enterPword" Grid.Row="4" Grid.Column="1" Margin="5" VerticalAlignment="Center" BorderBrush="#7F000000" Background="#FFF0F0F0"></TextBox>
+        <TextBox x:Name="confirmPword" Grid.Row="5" Grid.Column="1" Margin="5" VerticalAlignment="Center" BorderBrush="#7F000000" Background="#FFF0F0F0"></TextBox>
+
+        <!-- START OF BUTTONS-->
+        <Button x:Name="displayUsers" Grid.Row="6" Grid.Column="2" Width="150" HorizontalAlignment="Right" Margin="10" BorderBrush="#7F000000" Background="White">Display all users</Button>
+        <Button x:Name="submit" Grid.Row="6" Grid.Column="1" Width="150" HorizontalAlignment="Right" Margin="5,10" BorderBrush="#7F000000" Background="#FF0DB092" FontWeight="Bold">REGISTER</Button>
+
+        <!-- TEXTBLOCK HEADER-->
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="5,10" FontFamily="Tahoma" Foreground="Black" FontWeight="Bold" FontSize="22">User Registration Form</TextBlock>
+
+        <!--  LISTBOX TO DISPLAY ALL REGISTERED USERS-->
+        <ListBox x:Name="AllUsersListBox" Grid.Row="1" Grid.Column="2" Grid.RowSpan="5" Margin="10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock SourceUpdated="{Binding }"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
     </Grid>
 </Window>

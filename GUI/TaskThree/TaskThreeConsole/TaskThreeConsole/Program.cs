@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TaskThreeCommon
 {
     public class Program
     {
         static IGameModel EasyGame = new EasyLevel();
-        static IGameModel mediumGame = new MediumLevel();
+        static IGameModel MediumGame = new MediumLevel();
+        static IGameModel HardGame = new HardLevel();
         static void Main(string[] args)
         {
 
@@ -28,19 +25,20 @@ namespace TaskThreeCommon
                 do
                 {
                     /*Display the easy level and take the input*/
-                    DisplayGame(EasyGame.SecretNumber, EasyGame.DifficultyLevel, EasyGame.MaxNumber, EasyGame.MaxGuesses, EasyGame.CurrentGuessCount);
+                    StandardMessages.DisplayGame(EasyGame.SecretNumber, EasyGame.DifficultyLevel, EasyGame.MaxNumber, EasyGame.MaxGuesses, EasyGame.CurrentGuessCount);
                     EasyGame.CurrentGuess = int.Parse(Console.ReadLine());
 
                     /*Play the Game*/
-                    EasyGame.CalculateScore();
+                    EasyGame.CalculateScore(EasyGame.CurrentGuess);
 
                     /*Move to the next level if completed*/
                     if (EasyGame.LevelComplete)
+                        StandardMessages.YouWon();
                         input++;
                 } while (EasyGame.LevelComplete == false && EasyGame.GameOver == false);
 
                 if (EasyGame.GameOver && EasyGame.Score > 0)
-                    EasyGame.EnterUsername(GetName(EasyGame.Score));
+                    EasyGame.EnterUsername(StandardMessages.GetName(EasyGame.Score));
 
                 Console.WriteLine($"Thank you for playing {EasyGame.UN}\nPress ENTER to continue...");
             }
@@ -51,52 +49,54 @@ namespace TaskThreeCommon
                 do
                 {
                     /*Carry over the score from previous level*/
-                    mediumGame.Score = EasyGame.Score;
-                    DisplayGame(mediumGame.SecretNumber, mediumGame.DifficultyLevel, mediumGame.MaxNumber, mediumGame.MaxGuesses, mediumGame.CurrentGuessCount);
-                    mediumGame.CurrentGuess = int.Parse(Console.ReadLine());
+                    MediumGame.Score = EasyGame.Score;
+                    StandardMessages.DisplayGame(MediumGame.SecretNumber, MediumGame.DifficultyLevel, MediumGame.MaxNumber, MediumGame.MaxGuesses, MediumGame.CurrentGuessCount);
+                    MediumGame.CurrentGuess = int.Parse(Console.ReadLine());
 
-                    mediumGame.CalculateScore();
+                    MediumGame.CalculateScore(MediumGame.CurrentGuess);
 
-                    if (mediumGame.LevelComplete)
+                    if (MediumGame.LevelComplete)
                         input++;
-                } while (mediumGame.LevelComplete == false && mediumGame.GameOver == false);
+                } while (MediumGame.LevelComplete == false && MediumGame.GameOver == false);
 
-                if (mediumGame.GameOver && mediumGame.Score > 0)
-                    mediumGame.EnterUsername(GetName(mediumGame.Score));
+                if (MediumGame.GameOver && MediumGame.Score > 0)
+                    MediumGame.EnterUsername(StandardMessages.GetName(MediumGame.Score));
 
-                Console.WriteLine($"Thank you for playing {mediumGame.UN}\nPress ENTER to continue...");
+                Console.WriteLine($"Thank you for playing {MediumGame.UN}\nPress ENTER to continue...");
             }
 
             /*Hard*/
             if (input == 3)
             {
+                do
+                {
+                    /*Carry over the score from previous level*/
+                    HardGame.Score = MediumGame.Score;
+                    StandardMessages.DisplayGame(HardGame.SecretNumber, HardGame.DifficultyLevel, HardGame.MaxNumber, HardGame.MaxGuesses, HardGame.CurrentGuessCount);
+                    HardGame.CurrentGuess = int.Parse(Console.ReadLine());
+
+                    HardGame.CalculateScore(HardGame.CurrentGuess);
+
+                    if (HardGame.LevelComplete)
+                        input++;
+                } while (HardGame.LevelComplete == false && HardGame.GameOver == false);
+
+                if (HardGame.GameOver && HardGame.Score > 0)
+                    HardGame.EnterUsername(StandardMessages.GetName(HardGame.Score));
+
+                Console.WriteLine($"Thank you for playing {HardGame.UN}\nPress ENTER to continue...");
             }
 
-            /*?*/
+            /* Exit App*/
             if (input == 4)
             {
+                Console.Clear();
+                Console.WriteLine("Thanks for playing. Press any key to exit.");
             }
 
 
             Console.ReadLine();
         }
-
-        /*Not required but something i noticed is that your code repeats alot 
-          which indicates there should be a method there*/
-        static void DisplayGame(int num, string level, int max, int guesses, int currentGuess)
-        {
-            Console.Clear();
-            Console.WriteLine($"Secret Num: {num}");//For Testing only, delete
-            Console.WriteLine($"Random Number Guessing Game || {level} Level");
-            Console.WriteLine($"Choose a number between 1 and {max}. You get {guesses} guesses.");
-            Console.Write($"\n\nAttempt number {currentGuess}: ");
-        }
-
-        static string GetName(int score)
-        {
-            Console.Clear();
-            Console.Write($"\nGame Over\nYour score was: {score}\nPlease enter your name: ");
-            return Console.ReadLine();
-        }
+        
     }
 }

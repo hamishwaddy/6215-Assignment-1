@@ -41,8 +41,8 @@
         <TextBox x:Name="confirmPword" Grid.Row="5" Grid.Column="1" Margin="5" VerticalAlignment="Center" BorderBrush="#7F000000" Background="#FFF0F0F0"></TextBox>
 
         <!-- START OF BUTTONS-->
-        <Button x:Name="displayUsers" Grid.Row="6" Grid.Column="2" Width="150" HorizontalAlignment="Right" Margin="10" BorderBrush="#7F000000" Background="#FFF0F0F0">Display all users</Button>
-        <Button x:Name="submit" Grid.Row="6" Grid.Column="1" Width="150" HorizontalAlignment="Right" Margin="5,10" BorderBrush="#7F000000" Background="#FFF0F0F0">Add User</Button>
+        <Button x:Name="displayUsers" Grid.Row="6" Grid.Column="2" Width="150" HorizontalAlignment="Right" Margin="10" BorderBrush="#7F000000" Background="White">Display all users</Button>
+        <Button x:Name="submit" Grid.Row="6" Grid.Column="1" Width="150" HorizontalAlignment="Right" Margin="5,10" BorderBrush="#7F000000" Background="#FF0DB092" FontWeight="Bold">REGISTER</Button>
 
         <!-- TEXTBLOCK HEADER-->
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="5,10" FontFamily="Tahoma" Foreground="Black" FontWeight="Bold" FontSize="22">User Registration Form</TextBlock>

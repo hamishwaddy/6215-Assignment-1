@@ -226,7 +226,7 @@
             // 
             this.userNameLbl.Location = new System.Drawing.Point(502, 325);
             this.userNameLbl.Name = "userNameLbl";
-            this.userNameLbl.Size = new System.Drawing.Size(465, 58);
+            this.userNameLbl.Size = new System.Drawing.Size(691, 58);
             this.userNameLbl.TabIndex = 16;
             // 
             // submit

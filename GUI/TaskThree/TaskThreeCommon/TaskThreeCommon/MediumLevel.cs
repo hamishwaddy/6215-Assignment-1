@@ -19,7 +19,6 @@ namespace TaskThreeCommon
         public List<string> Guesses { get; set; } = new List<string>();
         public bool LevelComplete { get; set; } = false;
         public bool GameOver { get; set; } = false;
-
         public int SecretNumber { get; set; }
         public int CurrentGuess { get; set; }// Will be passed to CalculateScore();
 
@@ -39,8 +38,9 @@ namespace TaskThreeCommon
         }
 
 
-        public void CalculateScore()
+        public int CalculateScore(int CurrentGuess)
         {
+            int runningTotal = 0;
             //Guesses.Add(CurrentGuess);
             Guesses.Add($"{CurrentGuess} @ {DifficultyLevel}");
 
@@ -63,7 +63,9 @@ namespace TaskThreeCommon
                 GameOver = true;
 
             CurrentGuessCount++;
+            return runningTotal;
         }
+
         public void EnterUsername(string userName)
         {
             char[] constrained = new char[5];
