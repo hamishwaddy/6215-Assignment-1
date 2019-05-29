@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TaskTwoWinForms")]
+[assembly: AssemblyTitle("TaskTwoWin Forms")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TaskTwoWinForms")]
+[assembly: AssemblyProduct("TaskTwoWin Forms")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2796b49f-5809-4269-aeac-f438973a653c")]
+[assembly: Guid("b2cc7db1-81c0-4edc-8a2d-6f1f23c69214")]
 
 // Version information for an assembly consists of the following four values:
 //

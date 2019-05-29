@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PhoneBook2
+namespace TaskTwoCommon
 {
-    class Supervisor : ISupervisor
+    public class Supervisor : ISupervisor
     {
         public string name { get; set; }
         public string phone { get; set; }

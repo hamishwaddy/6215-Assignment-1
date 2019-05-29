@@ -5,8 +5,10 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
+using CommonClasses;
+using TaskTwoCommon;
 
-namespace PhoneBook2
+namespace TaskTwoConsole
 {
     class Program
     {

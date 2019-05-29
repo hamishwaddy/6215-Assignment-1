@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TaskTwoWinForms
+namespace TaskTwoWin_Forms
 {
     static class Program
     {

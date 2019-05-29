@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Web.Script.Serialization;
 
-namespace PhoneBook2
+namespace TaskTwoCommon
 {
     public class Phonebook
     {

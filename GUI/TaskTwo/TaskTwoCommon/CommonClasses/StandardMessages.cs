@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PhoneBook2
+namespace TaskTwoCommon
 {
     public class StandardMessages
     {

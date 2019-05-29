@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TaskTwoWinForms
+namespace PhoneBook2WinForms
 {
     static class Program
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PhoneBook2
+namespace TaskTwoCommon
 {
     public class Login
     {
@@ -16,9 +16,9 @@ namespace PhoneBook2
         {
             var userList = MockLogin();
 
-            foreach(var item in userList)
+            foreach (var item in userList)
             {
-                if(item.userName == user && item.password == password)
+                if (item.userName == user && item.password == password)
                 {
                     return true;
                 }
@@ -26,7 +26,7 @@ namespace PhoneBook2
             return false;
         }
 
-        public  bool checkSupervisor(string user)
+        public bool checkSupervisor(string user)
         {
             var userList = MockLogin();
 
@@ -40,16 +40,15 @@ namespace PhoneBook2
             return false;
         }
 
+        //TEST LOGIN WITH MOCK DATA
         public static List<Login> MockLogin()
         {
-            return  new List<Login>
+            return new List<Login>
             {
                 new Login() { userName = "sam", password = "123", isSupervisor = true },
                 new Login() { userName = "orrie", password = "123", isSupervisor = false },
                 //new Login() { userName = "sam", password = "123", isSupervisor = true }
             };
-
-
         }
     }
 
